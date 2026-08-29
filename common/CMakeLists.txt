@@ -64,7 +64,6 @@ set(incs
   include/pcl/type_traits.h
   include/pcl/point_types_conversion.h
   include/pcl/point_representation.h
-  include/pcl/descriptor_size.h
   include/pcl/point_types.h
   include/pcl/feature_types.h
   include/pcl/for_each_type.h

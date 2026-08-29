@@ -38,7 +38,6 @@
 
 #pragma once
 
-#include <pcl/descriptor_size.h>        // for descriptorSize_v
 #include <pcl/memory.h>                 // for PCL_MAKE_ALIGNED_OPERATOR_NEW
 #include <pcl/pcl_config.h>             // for PCL_XYZ_POINT_TYPES, PCL_NORMAL_POINT_TYPES
 #include <pcl/pcl_macros.h>             // for PCL_EXPORTS

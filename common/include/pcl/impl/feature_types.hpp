@@ -7,7 +7,6 @@
 
 #pragma once
 
-#include <pcl/descriptor_size.h>        // for descriptorSize_v
 #include <pcl/pcl_macros.h>             // for PCL_IF_CONSTEXPR
 #include <pcl/memory.h>                 // for PCL_MAKE_ALIGNED_OPERATOR_NEW
 #include <pcl/feature_types.h>          // implementee
@@ -23,6 +22,8 @@ namespace pcl
   {
     namespace traits
     {
+      template<typename FeaturePointT> struct descriptorSize {};
+
       template<> struct descriptorSize<SHOT352> { static constexpr const int value = 352; };
       template<> struct descriptorSize<SHOT1344> { static constexpr const int value = 1344; };
       template<> struct descriptorSize<ShapeContext1980> { static constexpr const int value = 1980; };
@@ -41,6 +42,9 @@ namespace pcl
       template<> struct descriptorSize<BRISKSignature512> { static constexpr const int value = 64; };
       template<> struct descriptorSize<Narf36> { static constexpr const int value = 36; };
       template<int N> struct descriptorSize<Histogram<N>> { static constexpr const int value = N; };
+
+      template<typename FeaturePointT>
+      static constexpr int descriptorSize_v = descriptorSize<FeaturePointT>::value;
     }
   }
   PCL_EXPORTS std::ostream& operator << (std::ostream& os, const MomentInvariants& p);
